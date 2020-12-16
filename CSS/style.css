@@ -30,41 +30,44 @@
 
         .parentBox {
             margin: 0 auto;
-            height: 100vh;
             width: 70vw;
             margin-top: 50px;
             display: flex;
-            justify-content: space-evenly;
-            align-content: space-evenly;
             flex-wrap: wrap;
+            justify-content: center; /* Po to naudosim media query */
+ /*           align-content: space-evenly;Pasalinam, kadangi mums tinka numatytosios flex reiksmes.
+*/  
         }
 
         .childBox {
 
-            height: 410px;
-            width: 300px;
+/*            height: 410px; Aukscio nereikia */
+            width: calc((100% / 4) - 20px); /* Pakeiciau is 300px, kad skirtinguose ekranuose neissiderintu elementu vaizdavimas.*/
+            min-width: 280px;
             background-color: #fff;
             box-sizing: border-box;
             -webkit-box-shadow: 0px 3px 6px 2px rgba(201, 201, 			 201, 0.44);
             -moz-box-shadow: 0px 3px 6px 2px rgba(201, 201, 201, 		 0.44);
             box-shadow: 0px 3px 6px 2px rgba(201, 201, 201, 			 0.44);
-        }
-
-        .parentBoxForElements {
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            margin-top: 30px;
-        }
+            margin: 0 10px 20px; /* tarpai tarp korteliu. Panaudojam margin, vietoj space evenly ar space between, kad islaykytu proporcija slankiojant*/
+            padding: 20px;
 
+        }
         .socialIcons {
-            width: 16px;
-            height: 16px;
+            width: 24px;
+            height: 24px;
             padding: 5px;
             border: 1px solid darkgrey;
             border-radius: 50%;
             color: darkgrey;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .textAbout {
@@ -73,13 +76,10 @@
             line-height: 150%;
         }
 
-        .locationIcon {
-            width: 20px;
-            color: darkgrey;
-        }
-
         .location {
+            color: darkgrey;
             display: flex;
             align-items: center;
-
+            font-size: 12px;
+            margin-top: 10px;
         }
